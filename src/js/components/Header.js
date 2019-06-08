@@ -6,7 +6,6 @@ position: fixed;
 `;
 
 const H1 = styled.h1`
-  font-family: 'Ubuntu', sans-serif;
   margin: 10px;
 `;
 class Header extends React.Component {
