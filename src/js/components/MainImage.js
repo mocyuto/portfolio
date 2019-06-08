@@ -1,16 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
 
+const Wrapper = styled.section`
+  text-align: center;
+`;
 const Img = styled.img`
-width: 100%;
-max-width: 100%;
-height: auto;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
 `;
 
 class MainImage extends React.Component {
   render() {
     return (
-      <Img src={'img/honeymoon.jpg'} />
+      <Wrapper>
+        <Img src={'img/honeymoon.jpg'} />
+      </Wrapper>
     );
   }
 }

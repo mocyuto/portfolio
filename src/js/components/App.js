@@ -1,11 +1,12 @@
 import React from 'react';
+import Header from './Header';
 import Viewport from './Viewport';
 
 class App extends React.Component {
   render() {
     return (
       <div>
-        <h1>Yuto Suzuki</h1>
+        <Header />
         <Viewport />
       </div>
     );
