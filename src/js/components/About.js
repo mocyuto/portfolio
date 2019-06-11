@@ -3,9 +3,8 @@ import ContainerTitle from './ContainerTitle';
 import ContainerText from './ContainerText';
 import { SubContainer } from './Viewport';
 
-const mainText = "I'm work as a Backend Engineer at digital advertising company. ";
-const preferText = "I spend most of the time coding with Scala, Golang, Python, and create services on AWS. " +
-"I work on high traffic systems such as mobile measurement systems, Ad delivery systems.";
+const mainText = "I'm a Backend Engineer creating high traffic mobile measurement, and ad delivery systems at a digital advertising company. ";
+const preferText = "I usually work using AWS; writing in Scala, Golang and Python.";
 class About extends React.Component {
   render() {
     return (
