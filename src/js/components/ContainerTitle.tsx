@@ -9,7 +9,7 @@ export interface ContainerTitleProps {
   text: string;
 }
 export class ContainerTitle extends React.Component<ContainerTitleProps, {}> {
-  render() {
+  render(): JSX.Element {
     return <Title>{this.props.text}</Title>;
   }
 }

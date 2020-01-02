@@ -10,7 +10,7 @@ const Wrapper = styled.div`
 `;
 
 export class App extends React.Component<{}, {}> {
-  render() {
+  render(): JSX.Element {
     return (
       <Wrapper>
         <Header />

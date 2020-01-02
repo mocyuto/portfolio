@@ -15,7 +15,7 @@ const ALink = styled.a`
 `;
 
 export class Footer extends React.Component<{}, {}> {
-  render() {
+  render(): JSX.Element {
     return (
       <Container>
         <Wrapper>

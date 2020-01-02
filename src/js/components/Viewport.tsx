@@ -12,7 +12,7 @@ const Wrapper = styled.section`
 `;
 
 export class Viewport extends React.Component<{}, {}> {
-  render() {
+  render(): JSX.Element {
     return (
       <MainContainer>
         <MainImage />

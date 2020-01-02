@@ -11,7 +11,7 @@ const H1 = styled.h1`
 `;
 
 export class Header extends React.Component<{}, {}> {
-  render() {
+  render(): JSX.Element {
     return (
       <Wrapper>
         <H1>Yuto Suzuki</H1>

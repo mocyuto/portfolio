@@ -11,7 +11,7 @@ const Img = styled.img`
 `;
 
 export class MainImage extends React.Component<{}, {}> {
-  render() {
+  render(): JSX.Element {
     return (
       <Wrapper>
         <Img src={"img/honeymoon.jpg"} />

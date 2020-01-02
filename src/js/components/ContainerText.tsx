@@ -18,7 +18,7 @@ export interface ContainerTextProps {
 }
 
 export class ContainerText extends React.Component<ContainerTextProps, {}> {
-  render() {
+  render(): JSX.Element {
     return (
       <Container>
         <SubTitle>{this.props.title}</SubTitle>

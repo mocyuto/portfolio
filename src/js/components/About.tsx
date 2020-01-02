@@ -9,7 +9,7 @@ const preferText =
   "I usually work using AWS; writing in Scala, Golang and Python.";
 
 export class About extends React.Component<{}, {}> {
-  render() {
+  render(): JSX.Element {
     return (
       <SubContainer>
         <ContainerTitle text="About" />
