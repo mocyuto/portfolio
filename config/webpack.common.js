@@ -5,7 +5,9 @@ const path = require('path');
 module.exports = {
   cache: true,
   context: path.join(__dirname, "../src"),
-  entry: "./js/index.tsx",
+  entry: {
+    index: "./js/index.tsx",
+  },
   module: {
     rules: [
       {
@@ -44,7 +46,13 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, '../public'),
-    filename: "index.min.js"
+    filename: "[name].min.js"
+  },
+  optimization: {
+    splitChunks: {
+      name: 'vendor',
+      chunks: 'initial',
+    }
   },
   plugins: [
     new webpack.optimize.OccurrenceOrderPlugin(),
