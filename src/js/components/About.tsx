@@ -1,13 +1,14 @@
-import React from "react";
-import ContainerTitle from "./ContainerTitle";
-import ContainerText from "./ContainerText";
+import * as React from "react";
+import { ContainerTitle } from "./ContainerTitle";
+import { ContainerText } from "./ContainerText";
 import { SubContainer } from "./Viewport";
 
 const mainText =
   "I'm a Backend Engineer creating high traffic mobile measurement, and ad delivery systems at a digital advertising company. ";
 const preferText =
   "I usually work using AWS; writing in Scala, Golang and Python.";
-class About extends React.Component {
+
+export class About extends React.Component<{}, {}> {
   render() {
     return (
       <SubContainer>
@@ -27,4 +28,3 @@ class About extends React.Component {
     );
   }
 }
-export default About;

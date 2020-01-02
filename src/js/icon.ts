@@ -11,12 +11,14 @@ import {
   faFilePowerpoint
 } from "@fortawesome/free-solid-svg-icons";
 
-library.add(
-  fab,
-  faGithub,
-  faTwitter,
-  faFacebook,
-  fas,
-  faFileAlt,
-  faFilePowerpoint
-);
+export function load(): void {
+  library.add(
+    fab,
+    faGithub,
+    faTwitter,
+    faFacebook,
+    fas,
+    faFileAlt,
+    faFilePowerpoint
+  );
+}

@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import styled from "styled-components";
 
 const Wrapper = styled.section`
@@ -10,7 +10,7 @@ const Img = styled.img`
   height: auto;
 `;
 
-class MainImage extends React.Component {
+export class MainImage extends React.Component<{}, {}> {
   render() {
     return (
       <Wrapper>
@@ -19,4 +19,3 @@ class MainImage extends React.Component {
     );
   }
 }
-export default MainImage;

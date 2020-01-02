@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -14,7 +14,7 @@ const ALink = styled.a`
   font-size: 25px;
 `;
 
-class Footer extends React.Component {
+export class Footer extends React.Component<{}, {}> {
   render() {
     return (
       <Container>
@@ -39,4 +39,3 @@ class Footer extends React.Component {
     );
   }
 }
-export default Footer;

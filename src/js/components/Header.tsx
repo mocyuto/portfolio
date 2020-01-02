@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
@@ -9,7 +9,8 @@ const Wrapper = styled.div`
 const H1 = styled.h1`
   margin: 10px;
 `;
-class Header extends React.Component {
+
+export class Header extends React.Component<{}, {}> {
   render() {
     return (
       <Wrapper>
@@ -18,4 +19,3 @@ class Header extends React.Component {
     );
   }
 }
-export default Header;

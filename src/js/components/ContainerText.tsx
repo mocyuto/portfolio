@@ -1,6 +1,5 @@
-import React from "react";
+import * as React from "react";
 import styled from "styled-components";
-import PropTypes from "prop-types";
 
 const Container = styled.div`
   margin: 10px;
@@ -13,8 +12,12 @@ const SubTitle = styled.div`
 const Text = styled.div`
   font-size: 18px;
 `;
+export interface ContainerTextProps {
+  title: string;
+  text: string;
+}
 
-class ContainerText extends React.Component {
+export class ContainerText extends React.Component<ContainerTextProps, {}> {
   render() {
     return (
       <Container>
@@ -24,8 +27,3 @@ class ContainerText extends React.Component {
     );
   }
 }
-ContainerText.propTypes = {
-  title: PropTypes.string,
-  text: PropTypes.string
-};
-export default ContainerText;
