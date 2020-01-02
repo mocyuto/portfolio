@@ -19,20 +19,20 @@ class Footer extends React.Component {
     return (
       <Container>
         <Wrapper>
-          <ALink href="https://github.com/moc-yuto">
-            <FontAwesomeIcon icon={['fab', 'github']}/>
+          <ALink href="https://github.com/mocyuto">
+            <FontAwesomeIcon icon={['fab', 'github']} />
           </ALink>
           <ALink href="https://twitter.com/mocyuto">
-            <FontAwesomeIcon icon={['fab', 'twitter']}/>
+            <FontAwesomeIcon icon={['fab', 'twitter']} />
           </ALink>
           <ALink href="https://www.facebook.com/yutosuzu">
-            <FontAwesomeIcon icon={['fab', 'facebook']}/>
+            <FontAwesomeIcon icon={['fab', 'facebook']} />
           </ALink>
           <ALink href="https://yuutookun.hatenablog.com/">
-            <FontAwesomeIcon icon={['fas', 'file-alt']}/>
+            <FontAwesomeIcon icon={['fas', 'file-alt']} />
           </ALink>
-          <ALink href="https://www.slideshare.net/yutosuzu/edit_my_uploads">
-            <FontAwesomeIcon icon={['fas', 'file-powerpoint']}/>
+          <ALink href="https://www.slideshare.net/yutosuzu">
+            <FontAwesomeIcon icon={['fas', 'file-powerpoint']} />
           </ALink>
         </Wrapper>
       </Container>
