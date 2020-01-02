@@ -1,5 +1,6 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
+import PropTypes from "prop-types";
 
 const Container = styled.div`
   margin: 10px;
@@ -23,5 +24,8 @@ class ContainerText extends React.Component {
     );
   }
 }
-
+ContainerText.propTypes = {
+  title: PropTypes.string,
+  text: PropTypes.string
+};
 export default ContainerText;

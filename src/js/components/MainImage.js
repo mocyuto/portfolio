@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 const Wrapper = styled.section`
   text-align: center;
@@ -14,7 +14,7 @@ class MainImage extends React.Component {
   render() {
     return (
       <Wrapper>
-        <Img src={'img/honeymoon.jpg'} />
+        <Img src={"img/honeymoon.jpg"} />
       </Wrapper>
     );
   }

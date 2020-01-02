@@ -1,6 +1,6 @@
-import React from 'react';
-import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import React from "react";
+import styled from "styled-components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Container = styled.section`
   margin: 60px 20px 20px;
@@ -20,19 +20,19 @@ class Footer extends React.Component {
       <Container>
         <Wrapper>
           <ALink href="https://github.com/mocyuto">
-            <FontAwesomeIcon icon={['fab', 'github']} />
+            <FontAwesomeIcon icon={["fab", "github"]} />
           </ALink>
           <ALink href="https://twitter.com/mocyuto">
-            <FontAwesomeIcon icon={['fab', 'twitter']} />
+            <FontAwesomeIcon icon={["fab", "twitter"]} />
           </ALink>
           <ALink href="https://www.facebook.com/yutosuzu">
-            <FontAwesomeIcon icon={['fab', 'facebook']} />
+            <FontAwesomeIcon icon={["fab", "facebook"]} />
           </ALink>
           <ALink href="https://yuutookun.hatenablog.com/">
-            <FontAwesomeIcon icon={['fas', 'file-alt']} />
+            <FontAwesomeIcon icon={["fas", "file-alt"]} />
           </ALink>
           <ALink href="https://www.slideshare.net/yutosuzu">
-            <FontAwesomeIcon icon={['fas', 'file-powerpoint']} />
+            <FontAwesomeIcon icon={["fas", "file-powerpoint"]} />
           </ALink>
         </Wrapper>
       </Container>
