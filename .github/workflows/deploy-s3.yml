@@ -16,7 +16,8 @@ jobs:
     - name: npm install, build, and test
       run: |
         npm install
-        npm run build --if-present
+        npm run build
+        npm run lint
     - uses: jakejarvis/s3-sync-action@master
       with:
         args: --delete
