@@ -1,10 +1,9 @@
 const CopyPlugin = require('copy-webpack-plugin');
-const TerserPlugin = require('terser-webpack-plugin');
 const webpack = require('webpack');
 const path = require('path');
 
 module.exports = {
-  context: path.join(__dirname, "src"),
+  context: path.join(__dirname, "../src"),
   entry: "./js/index.js",
   module: {
     rules: [{
@@ -15,16 +14,22 @@ module.exports = {
         options: {
           presets: ['@babel/preset-react', '@babel/preset-env']
         }
-      }]
+      },
+        'eslint-loader',
+      ]
+    },
+    {
+      test: /\.js$/,
+      exclude: /node_modules/,
+      loader: 'eslint-loader',
+      options: {
+        fix: true,
+      },
     }]
   },
   output: {
-    path: __dirname + "/public/",
+    path: path.resolve(__dirname, '../public'),
     filename: "index.min.js"
-  },
-  optimization: {
-    minimize: true,
-    minimizer: [new TerserPlugin()],
   },
   plugins: [
     new webpack.optimize.OccurrenceOrderPlugin(),

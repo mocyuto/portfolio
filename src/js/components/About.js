@@ -17,7 +17,7 @@ class About extends React.Component {
         <ContainerText title="Main Language" text="Japanese" />
         <ContainerText
           title="Professional Experience"
-          text="Software Engineer, Gunosy inc. April 2018 - Present"
+          text="Lead Software Engineer, Gunosy inc. April 2018 - Present"
         />
         <ContainerText
           title=""
