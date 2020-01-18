@@ -23,9 +23,3 @@ export class Viewport extends React.Component<{}, {}> {
     );
   }
 }
-
-export const SubContainer = styled.section<{}>`
-  width: 90%;
-  margin-right: auto;
-  margin-left: auto;
-`;

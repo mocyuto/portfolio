@@ -6,7 +6,7 @@ import { Viewport } from "./Viewport";
 import { Footer } from "./Footer";
 
 const Wrapper = styled.div`
-  font-family: "Noto Sans TC", sans-serif;
+  font-family: "Noto Sans JP", sans-serif;
 `;
 
 export class App extends React.Component<{}, {}> {
