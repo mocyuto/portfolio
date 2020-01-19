@@ -1,5 +1,7 @@
 import * as React from "react";
 import styled from "styled-components";
+import media from "styled-media-query";
+
 import { ContainerTitle } from "./ContainerTitle";
 import { ContainerText } from "./ContainerText";
 
@@ -49,7 +51,12 @@ export class About extends React.Component<{}, {}> {
 }
 
 const AboutContainer = styled.section<{}>`
-  width: 90%;
+  ${media.lessThan("small")`
+    width: 100%;
+  `}
+  ${media.greaterThan("small")`
+    width: 90%;
+  `}
   margin-right: auto;
   margin-left: auto;
 `;
@@ -61,6 +68,11 @@ const FlexContainer = styled.div<{}>`
 `;
 
 const FlexItem = styled.div<{}>`
-  width: 50%;
+  ${media.lessThan("medium")`
+    width: 100%;
+  `}
+  ${media.greaterThan("medium")`
+    width: 50%;
+  `}
   min-width: 300px;
 `;
