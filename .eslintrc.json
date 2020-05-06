@@ -29,7 +29,8 @@
     ],
     "ignorePatterns": [
         "public/",
-        "img/"
+        "img/",
+        "index.html"
     ],
     "rules": {},
     "settings": {
