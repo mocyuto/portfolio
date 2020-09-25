@@ -8,7 +8,7 @@ const Title = styled.h2`
 export interface ContainerTitleProps {
   text: string;
 }
-export class ContainerTitle extends React.Component<ContainerTitleProps, {}> {
+export class ContainerTitle extends React.Component<ContainerTitleProps> {
   render(): JSX.Element {
     return <Title>{this.props.text}</Title>;
   }

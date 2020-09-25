@@ -17,7 +17,7 @@ export interface ContainerTextProps {
   text: string;
 }
 
-export class ContainerText extends React.Component<ContainerTextProps, {}> {
+export class ContainerText extends React.Component<ContainerTextProps> {
   render(): JSX.Element {
     return (
       <Container>

@@ -10,7 +10,7 @@ const Img = styled.img`
   height: auto;
 `;
 
-export class MainImage extends React.Component<{}, {}> {
+export class MainImage extends React.Component {
   render(): JSX.Element {
     return (
       <Wrapper>

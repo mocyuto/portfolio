@@ -3,12 +3,12 @@ import {
   fab,
   faGithub,
   faTwitter,
-  faFacebook
+  faFacebook,
 } from "@fortawesome/free-brands-svg-icons";
 import {
   fas,
   faFileAlt,
-  faFilePowerpoint
+  faFilePowerpoint,
 } from "@fortawesome/free-solid-svg-icons";
 
 export function load(): void {

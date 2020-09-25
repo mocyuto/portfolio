@@ -1,6 +1,8 @@
 const CopyPlugin = require('copy-webpack-plugin');
 const webpack = require('webpack');
 const path = require('path');
+const createStyledComponentsTransformer = require('typescript-plugin-styled-components').default;
+const styledComponentsTransformer = createStyledComponentsTransformer();
 
 module.exports = {
   cache: true,
@@ -32,6 +34,9 @@ module.exports = {
           'babel-loader',
           {
             loader: "ts-loader",
+            options: {
+              getCustomTransformers: () => ({ before: [styledComponentsTransformer] })
+            }
           },
           {
             loader: 'eslint-loader',
@@ -56,9 +61,11 @@ module.exports = {
   },
   plugins: [
     new webpack.optimize.OccurrenceOrderPlugin(),
-    new CopyPlugin([
-      { from: 'img/**/*', to: '' },
-      { from: 'index.html', to: '' },
-    ]),
+    new CopyPlugin({
+      patterns: [
+        { from: 'img/**/*', to: '' },
+        { from: 'index.html', to: '' },
+      ]
+    }),
   ]
 };
