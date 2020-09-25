@@ -11,7 +11,7 @@ const Wrapper = styled.section`
   text-align: center;
 `;
 
-export class Viewport extends React.Component<{}, {}> {
+export class Viewport extends React.Component {
   render(): JSX.Element {
     return (
       <MainContainer>

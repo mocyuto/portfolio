@@ -14,7 +14,7 @@ const ALink = styled.a`
   font-size: 25px;
 `;
 
-export class Footer extends React.Component<{}, {}> {
+export class Footer extends React.Component {
   render(): JSX.Element {
     return (
       <Container>

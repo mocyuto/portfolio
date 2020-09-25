@@ -8,7 +8,7 @@ import { ContainerText } from "./ContainerText";
 const mainText =
   "I'm a Backend Engineer creating high traffic mobile measurement, and ad delivery systems at a digital advertising company. I usually work architecting using AWS.";
 
-export class About extends React.Component<{}, {}> {
+export class About extends React.Component {
   render(): JSX.Element {
     return (
       <AboutContainer>
@@ -19,7 +19,7 @@ export class About extends React.Component<{}, {}> {
             <ContainerText title="Main Language" text="Japanese" />
             <ContainerText
               title="Skills"
-              text="Scala, Go, Python, JavaScript/TypeScript, Java, Objective-C, Vue, React, ECS, k8s, MySQL, DynamoDB, Kinesis, Athena, Redis, Linux"
+              text="Scala, Go, Python, JavaScript/TypeScript, Java, Objective-C, Vue, ECS, k8s, MySQL, DynamoDB, Kinesis, Athena, Redis, Linux"
             />
           </FlexItem>
           <FlexItem>
@@ -50,7 +50,7 @@ export class About extends React.Component<{}, {}> {
   }
 }
 
-const AboutContainer = styled.section<{}>`
+const AboutContainer = styled.section`
   ${media.lessThan("small")`
     width: 100%;
   `}
@@ -61,13 +61,13 @@ const AboutContainer = styled.section<{}>`
   margin-left: auto;
 `;
 
-const FlexContainer = styled.div<{}>`
+const FlexContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 `;
 
-const FlexItem = styled.div<{}>`
+const FlexItem = styled.div`
   ${media.lessThan("medium")`
     width: 100%;
   `}
