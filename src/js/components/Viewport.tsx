@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 import { MainImage } from "./MainImage";
 import { About } from "./About";
+import { Links } from "./Links";
 
 const MainContainer = styled.div`
   width: 100%;
@@ -18,6 +19,7 @@ export class Viewport extends React.Component {
         <MainImage />
         <Wrapper>
           <About />
+          <Links />
         </Wrapper>
       </MainContainer>
     );

@@ -1,5 +1,7 @@
 import * as React from "react";
 import styled from "styled-components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
 
 const Container = styled.div`
   margin: 10px;
@@ -43,6 +45,30 @@ export class ContainerLinks extends React.Component<ContainerLinkProps> {
           ))}
         </Ul>
       </Container>
+    );
+  }
+}
+
+type ContainerIconLinkProps = {
+  text: string;
+  url: string;
+  icon: IconProp;
+};
+
+const IconLink = styled.div`
+  margin: 10px;
+`;
+const ALink = styled.a`
+  margin: 5px 8px;
+  font-size: 20px;
+`;
+export class ContainerIconLink extends React.Component<ContainerIconLinkProps> {
+  render(): JSX.Element {
+    return (
+      <IconLink>
+        <FontAwesomeIcon icon={this.props.icon} />
+        <ALink href={this.props.url}>{this.props.text}</ALink>
+      </IconLink>
     );
   }
 }
