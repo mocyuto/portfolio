@@ -67,7 +67,9 @@ export class ContainerIconLink extends React.Component<ContainerIconLinkProps> {
     return (
       <IconLink>
         <FontAwesomeIcon icon={this.props.icon} />
-        <ALink href={this.props.url}>{this.props.text}</ALink>
+        <ALink href={this.props.url} target="_blank" rel="noopener noreferrer">
+          {this.props.text}
+        </ALink>
       </IconLink>
     );
   }
