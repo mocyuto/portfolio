@@ -18,6 +18,11 @@ const links: ContainerLink[] = [
       "「エンジニアのキャリアパスで新しい選択肢となるモデルを作る」 Gunosyが構築したエンジニアのための新しい評価制度とは",
     url: "https://thinkit.co.jp/article/17563",
   },
+  {
+    text: "第10期下半期AWARD受賞者インタビューVol.2",
+    url:
+      "https://gunosiru.gunosy.co.jp/entry/%e7%ac%ac10%e6%9c%9f%e4%b8%8b%e5%8d%8a%e6%9c%9faward%e5%8f%97%e8%b3%9e%e8%80%85%e3%82%a4%e3%83%b3%e3%82%bf%e3%83%93%e3%83%a5%e3%83%bcvol-2%ef%bc%8f%e6%96%b0%e3%81%97%e3%81%8f%e3%81%a6%e3%80%81",
+  },
 ];
 
 export class About extends React.Component {

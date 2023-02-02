@@ -51,20 +51,20 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, '../public'),
-    filename: "[name].min.js"
+    filename: "[name].min.js",
   },
   optimization: {
     splitChunks: {
-      name: 'vendor',
-      chunks: 'initial',
-    }
+      name: "vendor",
+      chunks: "initial",
+    },
   },
   plugins: [
     new webpack.optimize.OccurrenceOrderPlugin(),
     new CopyPlugin({
       patterns: [
-        { from: 'img/**/*', to: '' },
-        { from: 'index.html', to: '' },
+        { from: "img/**/*", to: "" },
+        { from: "index.html", to: "" },
       ]
     }),
   ]
