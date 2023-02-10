@@ -7,7 +7,7 @@ module.exports = {
   ],
   parser: "@typescript-eslint/parser",
   root: true,
-  ignorePatterns: ["node_modules", "dist"],
+  ignorePatterns: ["dist", "src/layouts/**"],
   overrides: [
     {
       // Define the configuration for `.astro` file.
