@@ -24,18 +24,11 @@
         "sourceType": "module"
     },
     "plugins": [
-        "react",
-        "html"
+        "plugin:astro/recommended"
     ],
     "ignorePatterns": [
         "public/",
         "img/",
         "index.html"
-    ],
-    "rules": {},
-    "settings": {
-        "react": {
-            "version": "detect"
-        }
-    }
+    ]
 }

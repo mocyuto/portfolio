@@ -1,3 +1,10 @@
+---
+export interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
 <!DOCTYPE html>
 <html>
 
@@ -20,14 +27,27 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta property="fb:app_id" content="448725895952237" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0" />
-  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:300&display=swap" rel="stylesheet">
-  <title>Yuto Suzuki / 鈴木 雄登</title>
+	<meta name="generator" content={Astro.generator} />
+  <title>{title}</title>
 </head>
 
 <body style="margin: 0">
-  <div id="app"></div>
-  <script src="index.min.js"></script>
-  <script src="vendor.min.js"></script>
+  <slot />
 </body>
 
 </html>
+
+<style is:global>
+	:root {
+		--accent: 124, 58, 237;
+		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
+	}
+	html {
+		font-family: system-ui, sans-serif;
+		background-color: #F6F6F6;
+	}
+	code {
+		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+			Bitstream Vera Sans Mono, Courier New, monospace;
+	}
+</style>
