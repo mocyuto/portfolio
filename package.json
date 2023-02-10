@@ -4,11 +4,14 @@
   "description": "my portfolio",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --config config/webpack.prod.js",
-    "dev": "webpack-dev-server --config config/webpack.dev.js",
     "lint": "eslint 'src/**'",
-    "format": "eslint --fix 'src/**'",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "format": "eslint --fix 'src/**' && prettier --write",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "repository": {
     "type": "git",
@@ -17,41 +20,22 @@
   "author": "Yuto Suzuki",
   "license": "MIT",
   "devDependencies": {
-    "@babel/core": "^7.11.6",
-    "@babel/preset-env": "^7.11.5",
-    "@babel/preset-react": "^7.10.4",
-    "@types/react": "^16.8.24",
-    "@types/react-dom": "^16.0.5",
-    "@types/styled-components": "^5.1.3",
-    "@typescript-eslint/eslint-plugin": "^4.2.0",
-    "@typescript-eslint/parser": "^4.2.0",
-    "babel-loader": "^8.1.0",
-    "copy-webpack-plugin": "^6.1.1",
-    "eslint": "^7.9.0",
-    "eslint-config-prettier": "^6.11.0",
-    "eslint-loader": "^4.0.2",
-    "eslint-plugin-html": "^6.1.0",
-    "eslint-plugin-prettier": "^3.1.4",
-    "eslint-plugin-react": "^7.21.2",
-    "prettier": "2.1.2",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "source-map-loader": "^1.1.0",
-    "terser-webpack-plugin": "^4.2.2",
-    "ts-loader": "^8.0.4",
-    "typescript": "^4.0.3",
-    "typescript-plugin-styled-components": "^1.4.4",
-    "webpack": "^4.44.2",
-    "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "^3.11.3",
-    "webpack-merge": "^5.1.4"
+    "@typescript-eslint/eslint-plugin": "^5.50.0",
+    "@typescript-eslint/parser": "^5.50.0",
+    "eslint": "^8.31.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-astro": "^0.22.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.1.2",
+    "prettier-plugin-astro": "^0.8.0",
+    "typescript": "^4.0.3"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.30",
     "@fortawesome/free-brands-svg-icons": "^5.14.0",
     "@fortawesome/free-solid-svg-icons": "^5.14.0",
     "@fortawesome/react-fontawesome": "^0.1.11",
-    "styled-components": "^5.2.0",
-    "styled-media-query": "^2.1.2"
+    "astro": "^2.0.10",
+    "astro-icon": "^0.8.0"
   }
 }

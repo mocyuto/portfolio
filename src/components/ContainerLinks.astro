@@ -1,0 +1,44 @@
+---
+import type { ContainerLink } from "./type";
+
+export interface ContainerLinkProps {
+  title: string;
+  links: ContainerLink[];
+}
+const {title, links} = Astro.props as ContainerLinkProps;
+---
+
+<div class="container">
+  <h3>{title}</h3>
+  <ul>
+    {links.map((link) => (
+      <li>
+        <a href={link.url}>
+          <p>{link.text}</p>
+        </a>
+      </li>
+    ))}
+  </ul>
+</div>
+
+<style>
+  h3 {
+    font-size: 25px;
+    font-weight: 200;
+    margin: 10px 0px;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  li {
+    margin: 10px;
+  }
+  p {
+    font-size: 14px;
+    font-weight: 100;
+  }
+  .container {
+    margin: 10px;
+  }
+</style>

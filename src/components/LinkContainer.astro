@@ -1,0 +1,22 @@
+---
+import { Icon } from 'astro-icon'
+interface Props {
+  url: string;
+  iconSet: string;
+}
+const { url, iconSet } = Astro.props as Props
+---
+<div>
+  <a href={url} target="_blank" rel="noopener noreferrer">
+    <Icon name={iconSet} />
+  </a>
+</div>
+
+<style>
+  div {
+    margin: auto;
+  }
+  [astro-icon] {
+    width: 25px;
+  }
+</style>
