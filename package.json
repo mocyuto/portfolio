@@ -4,8 +4,8 @@
   "description": "my portfolio",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint 'src/**'",
-    "format": "eslint --fix 'src/**' && prettier --write",
+    "lint": "eslint .",
+    "format": "eslint --fix .",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "astro dev",
     "start": "astro dev",
