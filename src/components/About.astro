@@ -1,88 +1,139 @@
 ---
-import ContainerText from "./ContainerText.astro";
-import ContainerLinks from "./ContainerLinks.astro";
-import type { ContainerLink } from "./type";
+import SkillTags from './SkillTags.astro';
 
-const mainText =
-  "I'm a Backend Engineer creating high traffic mobile measurement, and ad delivery systems at a digital advertising company. I usually work architecting using AWS.";
-const links: ContainerLink[] = [
+const backendSkills = ['Scala', 'Go', 'Python', 'Ruby', 'Java'];
+const frontendSkills = ['TypeScript', 'React'];
+const infraSkills = ['AWS', 'Kubernetes', 'Docker'];
+
+const interviews = [
   {
     text: "マネージャーではなく、技術のスペシャリストとして生きる道",
     url: "https://news.mynavi.jp/itsearch/article/solution/4895",
   },
   {
-    text:
-      "「エンジニアのキャリアパスで新しい選択肢となるモデルを作る」 Gunosyが構築したエンジニアのための新しい評価制度とは",
+    text: "「エンジニアのキャリアパスで新しい選択肢となるモデルを作る」 Gunosyが構築したエンジニアのための新しい評価制度とは",
     url: "https://thinkit.co.jp/article/17563",
   },
   {
     text: "第10期下半期AWARD受賞者インタビューVol.2",
-    url:
-      "https://gunosiru.gunosy.co.jp/entry/%e7%ac%ac10%e6%9c%9f%e4%b8%8b%e5%8d%8a%e6%9c%9faward%e5%8f%97%e8%b3%9e%e8%80%85%e3%82%a4%e3%83%b3%e3%82%bf%e3%83%93%e3%83%a5%e3%83%bcvol-2%ef%bc%8f%e6%96%b0%e3%81%97%e3%81%8f%e3%81%a6%e3%80%81",
+    url: "https://gunosiru.gunosy.co.jp/entry/%e7%ac%ac10%e6%9c%9f%e4%b8%8b%e5%8d%8a%e6%9c%9faward%e5%8f%97%e8%b3%9e%e8%80%85%e3%82%a4%e3%83%b3%e3%82%bf%e3%83%93%e3%83%a5%e3%83%bcvol-2%ef%bc%8f%e6%96%b0%e3%81%97%e3%81%8f%e3%81%a6%e3%80%81",
   },
 ];
-
 ---
-<section>
-  <h2>About</h2>
-  <div class="flexcontainer">
-    <div class="flexitem">
-      <ContainerText title="Yuto Suzuki / 鈴木 雄登" text={mainText} />
-      <ContainerText title="Main Language" text="Japanese" />
-      <ContainerText
-        title="Skills"
-        text="Scala, Go, Python, TypeScript/React, Ruby, Java, Objective-C, kubernetes, AWS"
-      />
-      <ContainerText
-        title="Hobby"
-        text="Tennis, Futsal, Read books, Games"
-      />
+
+<section id="about" class="py-20 px-6">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="text-3xl font-bold text-text-primary mb-12">About</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="bg-white rounded-xl border border-border p-8 shadow-sm">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-lg font-semibold text-text-primary">
+            <span class="lang-ja">プロフィール</span>
+            <span class="lang-en hidden">Profile</span>
+          </h3>
+          <div class="flex rounded-lg overflow-hidden border border-border">
+            <button data-lang="ja" class="lang-tab px-3 py-1 text-sm font-medium bg-accent text-white transition-colors">
+              日本語
+            </button>
+            <button data-lang="en" class="lang-tab px-3 py-1 text-sm font-medium text-text-secondary hover:text-text-primary transition-colors">
+              English
+            </button>
+          </div>
+        </div>
+
+        <p class="lang-ja text-text-secondary leading-relaxed">
+          デジタル広告業界で長年、高トラフィックのモバイル計測・広告配信システムの設計・開発に従事してきました。現在はIR（投資家向け情報開示）領域のSaaSプロダクトを開発しており、フロントエンドからインフラまで開発全般を担当しています。技術選定からアーキテクチャ設計、実装、運用まで一貫して携わり、スケーラブルで保守性の高いシステムを作ることを心がけています。
+        </p>
+        <p class="lang-en text-text-secondary leading-relaxed hidden">
+          I have spent many years in the digital advertising industry, designing and developing high-traffic mobile measurement and ad delivery systems. Currently, I am developing a SaaS product in the IR (Investor Relations) space, handling the full development lifecycle from frontend to infrastructure. I am involved in everything from technology selection and architecture design to implementation and operations, always striving to build scalable and maintainable systems.
+        </p>
+
+        <div class="mt-4 text-sm text-text-muted space-y-1">
+          <p class="lang-ja"><span class="font-medium text-text-secondary">使用言語：</span>日本語</p>
+          <p class="lang-en hidden"><span class="font-medium text-text-secondary">Native Language:</span> Japanese</p>
+          <p class="lang-ja"><span class="font-medium text-text-secondary">趣味：</span>テニス、フットサル、読書、ゲーム</p>
+          <p class="lang-en hidden"><span class="font-medium text-text-secondary">Hobbies:</span> Tennis, Futsal, Reading, Games</p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl border border-border p-8 shadow-sm">
+        <h3 class="text-lg font-semibold text-text-primary mb-4">Skills</h3>
+        <div class="space-y-4">
+          <div>
+            <p class="text-xs font-medium text-text-muted uppercase tracking-wide mb-2">Backend</p>
+            <SkillTags skills={backendSkills} />
+          </div>
+          <div>
+            <p class="text-xs font-medium text-text-muted uppercase tracking-wide mb-2">Frontend</p>
+            <SkillTags skills={frontendSkills} />
+          </div>
+          <div>
+            <p class="text-xs font-medium text-text-muted uppercase tracking-wide mb-2">Infrastructure</p>
+            <SkillTags skills={infraSkills} />
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="flexitem">
-      <ContainerText
-        title="Professional Experience"
-        text="Engineering Manager, Gunosy inc. April 2023 - Present"
-      />
-      <ContainerText
-        title=""
-        text="Lead Software Engineer, Gunosy inc. April 2018 - 2023"
-      />
-      <ContainerText
-        title=""
-        text="Software Engineer, CyberZ inc. April 2013 - March 2018"
-      />
-      <ContainerText
-        title=""
-        text="Software Engineer, CyberAgent inc. April 2013 - March 2018"
-      />
-      <ContainerText
-        title="Education Experience"
-        text="Tokyo Institute of Technology, M.S. NLP. 2011 - 2013"
-      />
-      <ContainerText
-        title=""
-        text="Tokyo Institute of Technology, B.S. Computer Science. 2007 - 2011"
-      />
-    </div>
-    <div class="flexitem">
-      <ContainerLinks title="Interviews" links={links} />
+
+    <div class="mt-8 bg-white rounded-xl border border-border p-8 shadow-sm">
+      <h3 class="text-lg font-semibold text-text-primary mb-4">Media & Interviews</h3>
+      <ul class="space-y-3">
+        {interviews.map(interview => (
+          <li>
+            <a
+              href={interview.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group flex items-start gap-3 text-text-secondary hover:text-accent transition-colors"
+            >
+              <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-accent shrink-0 group-hover:scale-125 transition-transform"></span>
+              <span class="text-sm leading-relaxed underline decoration-slate-300 underline-offset-4 group-hover:decoration-accent">{interview.text}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
     </div>
   </div>
 </section>
 
-<style>
-  section {
-    margin-right: auto;
-    margin-left: auto;
-    text-align: left;
-  }
-  div.flexcontainer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  div.flexitem {
-    width: 50%;
-    min-width: 300px;
-  }
-</style>
+<script>
+  (function() {
+    const STORAGE_KEY = 'profileLang';
+    const DEFAULT_LANG = 'ja';
+
+    function switchLang(lang) {
+      const container = document.querySelector('#about');
+      if (!container) return;
+
+      container.querySelectorAll('.lang-ja, .lang-en').forEach(el => {
+        if (el.classList.contains('lang-' + lang)) {
+          el.classList.remove('hidden');
+        } else {
+          el.classList.add('hidden');
+        }
+      });
+
+      container.querySelectorAll('.lang-tab').forEach(btn => {
+        if (btn.dataset.lang === lang) {
+          btn.classList.remove('text-text-secondary', 'hover:text-text-primary');
+          btn.classList.add('bg-accent', 'text-white');
+        } else {
+          btn.classList.remove('bg-accent', 'text-white');
+          btn.classList.add('text-text-secondary', 'hover:text-text-primary');
+        }
+      });
+
+      localStorage.setItem(STORAGE_KEY, lang);
+    }
+
+    const savedLang = localStorage.getItem(STORAGE_KEY) || DEFAULT_LANG;
+    switchLang(savedLang);
+
+    document.querySelectorAll('.lang-tab').forEach(btn => {
+      btn.addEventListener('click', () => {
+        switchLang(btn.dataset.lang);
+      });
+    });
+  })();
+</script>
