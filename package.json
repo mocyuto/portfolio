@@ -10,7 +10,8 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "test": "vitest run"
   },
   "repository": {
     "type": "git",
@@ -27,7 +28,8 @@
     "eslint-plugin-prettier": "^5.0.0",
     "prettier": "^3.0.0",
     "prettier-plugin-astro": "^0.14.0",
-    "typescript": "^5.0.0"
+    "typescript": "^5.0.0",
+    "vitest": "^2.0.0"
   },
   "dependencies": {
     "astro": "^5.0.0",

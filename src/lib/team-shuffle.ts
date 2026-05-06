@@ -1,7 +1,7 @@
-export function getCombinations(arr, k) {
-  const result = [];
-  const combo = [];
-  function backtrack(start) {
+export function getCombinations(arr: number[], k: number): number[][] {
+  const result: number[][] = [];
+  const combo: number[] = [];
+  function backtrack(start: number): void {
     if (combo.length === k) {
       result.push([...combo]);
       return;
@@ -16,7 +16,7 @@ export function getCombinations(arr, k) {
   return result;
 }
 
-export function shuffle(array) {
+export function shuffle<T>(array: T[]): T[] {
   const arr = [...array];
   for (let i = arr.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -25,12 +25,18 @@ export function shuffle(array) {
   return arr;
 }
 
-export function getMatchSets(n, k) {
+export interface MatchSet {
+  teamA: number[];
+  teamB: number[];
+  rest: number[];
+}
+
+export function getMatchSets(n: number, k: number): MatchSet[] {
   if (n < 2 * k) return [];
   const allPeople = Array.from({ length: n }, (_, i) => i + 1);
   const teamACombos = getCombinations(allPeople, k);
-  const seen = new Set();
-  const matches = [];
+  const seen = new Set<string>();
+  const matches: MatchSet[] = [];
 
   for (const teamA of teamACombos) {
     const remaining = allPeople.filter((p) => !teamA.includes(p));
@@ -51,7 +57,7 @@ export function getMatchSets(n, k) {
   return matches;
 }
 
-function hasCommonRest(a, b) {
+function hasCommonRest(a: number[], b: number[]): boolean {
   const setA = new Set(a);
   for (const x of b) {
     if (setA.has(x)) return true;
@@ -59,16 +65,16 @@ function hasCommonRest(a, b) {
   return false;
 }
 
-export function shuffleAvoidConsecutiveRest(matches) {
+export function shuffleAvoidConsecutiveRest(matches: MatchSet[]): MatchSet[] {
   if (matches.length <= 1) return [...matches];
 
   const pool = shuffle(matches);
-  const result = [pool.pop()];
+  const result: MatchSet[] = [pool.pop()!];
 
   while (pool.length > 0) {
     const last = result[result.length - 1];
-    const candidates = [];
-    const others = [];
+    const candidates: MatchSet[] = [];
+    const others: MatchSet[] = [];
 
     for (const m of pool) {
       if (hasCommonRest(last.rest, m.rest)) {
@@ -78,7 +84,7 @@ export function shuffleAvoidConsecutiveRest(matches) {
       }
     }
 
-    let next;
+    let next: MatchSet;
     if (candidates.length > 0) {
       const idx = Math.floor(Math.random() * candidates.length);
       next = candidates[idx];
