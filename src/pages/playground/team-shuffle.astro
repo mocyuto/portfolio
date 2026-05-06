@@ -1,0 +1,113 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Team Shuffle - Playground">
+  <main class="min-h-screen bg-surface-muted text-text-primary px-4 py-10 sm:px-6 sm:py-20">
+    <div class="max-w-xl mx-auto">
+      <a href="/#playground" class="text-accent hover:underline mb-4 inline-block text-sm">← Playground に戻る</a>
+      <h1 class="text-2xl sm:text-3xl font-bold mb-2">Team Shuffle</h1>
+      <p class="text-text-secondary mb-8 text-sm sm:text-base leading-relaxed">合計人数と1チームあたりの人数を入力すると、全通りの対戦セットをランダムな順序で表示します。</p>
+
+      <div class="bg-white rounded-2xl border border-border p-5 sm:p-6 shadow-sm mb-8">
+        <div class="grid grid-cols-2 gap-3 sm:gap-4 mb-5">
+          <label class="block">
+            <span class="text-xs sm:text-sm font-semibold text-text-secondary mb-1.5 block">合計人数</span>
+            <input type="number" id="total" min="1" max="30" value="5"
+              class="w-full border border-border rounded-xl px-4 py-3 text-lg font-semibold text-center focus:outline-none focus:ring-2 focus:ring-accent bg-surface" />
+          </label>
+          <label class="block">
+            <span class="text-xs sm:text-sm font-semibold text-text-secondary mb-1.5 block">1チーム人数</span>
+            <input type="number" id="teamSize" min="1" max="30" value="2"
+              class="w-full border border-border rounded-xl px-4 py-3 text-lg font-semibold text-center focus:outline-none focus:ring-2 focus:ring-accent bg-surface" />
+          </label>
+        </div>
+        <button id="generate"
+          class="w-full bg-accent text-white font-bold text-lg px-6 py-4 rounded-xl hover:bg-accent-dark active:scale-[0.98] transition-all cursor-pointer shadow-sm">
+          生成する
+        </button>
+      </div>
+
+      <div id="result" class="space-y-3"></div>
+    </div>
+  </main>
+</Layout>
+
+<script type="module" is:inline>
+  import { getMatchSets, shuffleAvoidConsecutiveRest } from '/src/lib/team-shuffle.js';
+
+  const generateBtn = document.getElementById('generate');
+  const totalInput = document.getElementById('total');
+  const teamSizeInput = document.getElementById('teamSize');
+  const resultEl = document.getElementById('result');
+
+  function run() {
+    const n = parseInt(totalInput.value, 10);
+    const k = parseInt(teamSizeInput.value, 10);
+    resultEl.innerHTML = '';
+
+    if (isNaN(n) || isNaN(k) || n < 1 || k < 1) {
+      resultEl.innerHTML = '<p class="text-red-500 text-sm bg-white rounded-xl p-4 border border-red-100">正しい数値を入力してください。</p>';
+      return;
+    }
+    if (n > 30) {
+      resultEl.innerHTML = '<p class="text-red-500 text-sm bg-white rounded-xl p-4 border border-red-100">合計人数は30以下にしてください。</p>';
+      return;
+    }
+    if (2 * k > n) {
+      resultEl.innerHTML = '<p class="text-red-500 text-sm bg-white rounded-xl p-4 border border-red-100">対戦を行うには、チーム人数の2倍以上の合計人数が必要です。</p>';
+      return;
+    }
+
+    const matches = getMatchSets(n, k);
+    const ordered = shuffleAvoidConsecutiveRest(matches);
+
+    if (ordered.length === 0) {
+      return;
+    }
+
+    const countEl = document.createElement('p');
+    countEl.className = 'text-text-secondary text-sm font-semibold mb-1';
+    countEl.textContent = `全 ${ordered.length} 通り`;
+    resultEl.appendChild(countEl);
+
+    for (const match of ordered) {
+      const teamAHtml = match.teamA.map(num =>
+        `<span class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-accent-light text-accent-dark font-bold text-sm">${num}</span>`
+      ).join('');
+
+      const teamBHtml = match.teamB.map(num =>
+        `<span class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-emerald-100 text-emerald-700 font-bold text-sm">${num}</span>`
+      ).join('');
+
+      const restHtml = match.rest.length > 0
+        ? `<div class="flex items-center gap-1.5 mt-2 pt-2 border-t border-border/60">
+             <span class="text-xs text-text-muted font-medium">余り</span>
+             ${match.rest.map(num =>
+               `<span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-surface-muted text-text-secondary font-semibold text-xs">${num}</span>`
+             ).join('')}
+           </div>`
+        : '';
+
+      const wrapper = document.createElement('div');
+      wrapper.className = 'bg-white rounded-2xl border border-border p-4 shadow-sm';
+      wrapper.innerHTML = `
+        <div class="flex items-center gap-2">
+          <div class="flex items-center gap-1.5 flex-1 justify-end">
+            ${teamAHtml}
+          </div>
+          <div class="flex flex-col items-center px-1 shrink-0 min-w-[2rem]">
+            <span class="text-[10px] font-bold text-text-muted tracking-widest">VS</span>
+          </div>
+          <div class="flex items-center gap-1.5 flex-1">
+            ${teamBHtml}
+          </div>
+        </div>
+        ${restHtml}
+      `;
+      resultEl.appendChild(wrapper);
+    }
+  }
+
+  generateBtn.addEventListener('click', run);
+</script>
