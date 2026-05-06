@@ -33,13 +33,13 @@ import Layout from '../../layouts/Layout.astro';
   </main>
 </Layout>
 
-<script type="module" is:inline>
-  import { getMatchSets, shuffleAvoidConsecutiveRest } from '/src/lib/team-shuffle.js';
+<script>
+  import { getMatchSets, shuffleAvoidConsecutiveRest } from '../../lib/team-shuffle';
 
-  const generateBtn = document.getElementById('generate');
-  const totalInput = document.getElementById('total');
-  const teamSizeInput = document.getElementById('teamSize');
-  const resultEl = document.getElementById('result');
+  const generateBtn = document.getElementById('generate')!;
+  const totalInput = document.getElementById('total')! as HTMLInputElement;
+  const teamSizeInput = document.getElementById('teamSize')! as HTMLInputElement;
+  const resultEl = document.getElementById('result')!;
 
   function run() {
     const n = parseInt(totalInput.value, 10);
