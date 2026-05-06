@@ -1,52 +1,30 @@
 ---
 export interface Props {
-	title: string;
+  title: string;
 }
 
-const { title } = Astro.props as Props;
+const { title } = Astro.props;
 ---
+
 <!DOCTYPE html>
-<html>
-
+<html lang="ja">
   <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-30403669-3"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() { dataLayer.push(arguments); }
-      gtag('js', new Date());
-      gtag('config', 'UA-30403669-3');
-    </script>
-
     <meta charset="utf-8">
-    <meta property="og:title" content="Yuto Suzuki" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>{title}</title>
+    <meta name="description" content="Yuto Suzuki - Backend Engineer & Engineering Manager" />
+    <meta property="og:title" content={title} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://yutosuzuki.info/" />
-    <meta property="og:image" content="https://yutosuzuki.info/img/honeymoon_thumbnail.jpg" />
-    <meta property="og:description" content="I work as a Backend Engineer" />
+    <meta property="og:description" content="Backend Engineer & Engineering Manager" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta property="fb:app_id" content="448725895952237" />
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0" />
-    <title>{title}</title>
+    <meta property="og:image" content="https://yutosuzuki.com/img/honeymoon_thumbnail.jpg" />
+    <meta name="twitter:image" content="https://yutosuzuki.com/img/honeymoon_thumbnail.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   </head>
-
-  <body style="margin: 0">
+  <body>
     <slot />
   </body>
-
 </html>
-
-<style is:global>
-	:root {
-		--accent: 124, 58, 237;
-		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background-color: #F6F6F6;
-	}
-	code {
-		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-			Bitstream Vera Sans Mono, Courier New, monospace;
-	}
-</style>

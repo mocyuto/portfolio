@@ -1,0 +1,20 @@
+---
+import { Icon } from 'astro-icon/components';
+---
+
+<section id="playground" class="py-20 px-6 bg-surface-muted">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="text-3xl font-bold text-text-primary mb-4">Playground</h2>
+    <p class="text-text-secondary mb-10">個人開発のゲームやツールなど、色々なものを置いています。</p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <a href="/games/tetris" class="group block bg-gradient-to-br from-white to-slate-50/50 rounded-xl border border-border p-6 shadow-sm hover:shadow-lg hover:border-accent/30 transition-all">
+        <div class="w-12 h-12 rounded-lg bg-accent-light flex items-center justify-center mb-4 group-hover:bg-accent group-hover:text-white transition-colors">
+          <Icon name="mdi:gamepad-variant" class="w-6 h-6 text-accent group-hover:text-white" />
+        </div>
+        <h3 class="text-lg font-semibold text-text-primary mb-1 group-hover:text-accent transition-colors">Tetris</h3>
+        <p class="text-text-secondary text-sm">クラシックなテトリスゲーム</p>
+      </a>
+    </div>
+  </div>
+</section>

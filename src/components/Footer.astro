@@ -1,37 +1,30 @@
 ---
-import LinkContainer from "./LinkContainer.astro";
+import { Icon } from 'astro-icon/components';
+
+const socialLinks = [
+  { url: 'https://github.com/mocyuto', icon: 'fe:github-alt', label: 'GitHub' },
+  { url: 'https://twitter.com/mocyuto', icon: 'mdi:twitter', label: 'X (Twitter)' },
+  { url: 'https://www.facebook.com/yutosuzu', icon: 'ic:baseline-facebook', label: 'Facebook' },
+  { url: 'https://yuutookun.hatenablog.com/', icon: 'ic:round-edit-note', label: 'Blog' },
+  { url: 'https://www.slideshare.net/yutosuzu', icon: 'icon-park-outline:slide', label: 'SlideShare' },
+];
 ---
 
-<footer>
-  <LinkContainer
-    url="https://github.com/mocyuto"
-    iconSet="fe:github-alt"
-  />
-  <LinkContainer
-    url="https://twitter.com/mocyuto"
-    iconSet="mdi:twitter"
-  />
-  <LinkContainer
-    url="https://www.facebook.com/yutosuzu"
-    iconSet="ic:baseline-facebook"
-  />
-  <LinkContainer
-    url="https://yuutookun.hatenablog.com/"
-    iconSet="ic:round-edit-note"
-  />
-  <LinkContainer
-    url="https://www.slideshare.net/yutosuzu"
-    iconSet="icon-park-outline:slide"
-  />
+<footer class="py-12 px-6 border-t border-border">
+  <div class="max-w-5xl mx-auto flex flex-col items-center gap-6">
+    <div class="flex gap-6">
+      {socialLinks.map(link => (
+        <a
+          href={link.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-text-muted hover:text-accent transition-colors"
+          aria-label={link.label}
+        >
+          <Icon name={link.icon} class="w-6 h-6" />
+        </a>
+      ))}
+    </div>
+    <p class="text-sm text-text-muted">&copy; {new Date().getFullYear()} Yuto Suzuki. All rights reserved.</p>
+  </div>
 </footer>
-
-<style>
-  footer {
-    margin: 60px 20px 20px;
-    right: 20px;
-    position: absolute;
-    height: 50px;
-    width: 30%;
-    display: flex;
-  }
-</style>
