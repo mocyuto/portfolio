@@ -1,0 +1,444 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="Tennis Score Counter - Playground">
+  <main
+    class="min-h-screen bg-surface-muted text-text-primary px-4 py-10 sm:px-6 sm:py-20"
+  >
+    <div class="max-w-3xl mx-auto">
+      <a
+        href="/#playground"
+        class="text-accent hover:underline mb-4 inline-block text-sm"
+        >← Playground に戻る</a
+      >
+
+      <article
+        class="bg-white rounded-2xl border border-border shadow-sm overflow-hidden"
+      >
+        <div class="px-6 py-8 sm:px-10 sm:py-12 border-b border-border">
+          <h1 class="text-2xl sm:text-3xl font-bold mb-4">
+            Tennis Score Counter
+          </h1>
+          <p class="text-text-secondary text-base sm:text-lg leading-relaxed">
+            Garminウォッチでテニスのスコアを簡単に記録。タップするだけでポイント・ゲーム・セットを自動集計します。
+          </p>
+          <a
+            href="https://apps.garmin.com/ja-JP/apps/5e814ae1-3956-40c6-8051-6eeeb8158e66"
+            class="mt-4 inline-flex items-center gap-2 bg-accent text-white font-semibold px-5 py-2.5 rounded-lg hover:bg-accent-dark transition-colors shadow-sm"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+              ></path>
+            </svg>
+            ダウンロードはこちらから
+          </a>
+        </div>
+
+        <div class="px-6 py-8 sm:px-10 sm:py-12 space-y-8">
+          <section>
+            <h2
+              class="text-xl sm:text-2xl font-bold text-text-primary mb-4 pb-2 border-b border-border"
+            >
+              詳細説明
+            </h2>
+            <p class="text-text-secondary leading-relaxed mb-4">
+              Tennis
+              Scoreは、Garminウォッチ上でテニスの試合スコアを記録するウィジェットです。
+            </p>
+          </section>
+
+          <section>
+            <h2
+              class="text-xl sm:text-2xl font-bold text-text-primary mb-4 pb-2 border-b border-border"
+            >
+              主な機能
+            </h2>
+            <ul class="space-y-3">
+              <li
+                class="text-text-secondary leading-relaxed relative pl-5 before:content-['•'] before:absolute before:left-0 before:text-accent"
+              >
+                <strong class="font-semibold text-text-primary"
+                  >ポイント・ゲーム・セットの自動集計</strong
+                ><br />
+                ポイントを入力するだけで、ゲームとセットの進行を自動で計算します。
+              </li>
+              <li
+                class="text-text-secondary leading-relaxed relative pl-5 before:content-['•'] before:absolute before:left-0 before:text-accent"
+              >
+                <strong class="font-semibold text-text-primary"
+                  >サーブ権の表示</strong
+                ><br />
+                画面に現在のサーブ権を表示（Me(S) / Opp(S)）。
+              </li>
+              <li
+                class="text-text-secondary leading-relaxed relative pl-5 before:content-['•'] before:absolute before:left-0 before:text-accent"
+              >
+                <strong class="font-semibold text-text-primary"
+                  >タイブレーク対応</strong
+                ><br />
+                6-6になった際のタイブレーク（7ポイント先取・2点差）に対応します。
+              </li>
+              <li
+                class="text-text-secondary leading-relaxed relative pl-5 before:content-['•'] before:absolute before:left-0 before:text-accent"
+              >
+                <strong class="font-semibold text-text-primary"
+                  >ノーアドバンテージ（ノーアド）対応</strong
+                ><br />
+                Deuce後の1ポイント先取ルールにも対応します。
+              </li>
+              <li
+                class="text-text-secondary leading-relaxed relative pl-5 before:content-['•'] before:absolute before:left-0 before:text-accent"
+              >
+                <strong class="font-semibold text-text-primary"
+                  >試合後の統計表示</strong
+                ><br />
+                ブレークポイント獲得率、レシーブポイント獲得率、トータルポイント獲得率を確認できます。
+              </li>
+            </ul>
+          </section>
+
+          <section>
+            <h2
+              class="text-xl sm:text-2xl font-bold text-text-primary mb-4 pb-2 border-b border-border"
+            >
+              使い方
+            </h2>
+
+            <div class="space-y-6">
+              <div>
+                <h3
+                  class="text-lg sm:text-xl font-semibold text-text-primary mb-3"
+                >
+                  1. 設定画面（Setup）
+                </h3>
+                <p class="text-text-secondary leading-relaxed mb-4">
+                  起動後に表示される試合設定画面です。以下の項目を選び、<strong
+                    class="font-semibold text-text-primary">START</strong
+                  > をタップして試合を開始します。
+                </p>
+                <img
+                  src="/img/garmin-setting.png"
+                  alt="設定画面"
+                  class="rounded-xl border border-border shadow-sm mb-4 max-w-full h-auto"
+                />
+                <div class="overflow-x-auto">
+                  <table class="w-full text-sm border-collapse">
+                    <thead>
+                      <tr>
+                        <th
+                          class="border border-border px-4 py-2.5 text-left bg-surface-muted font-semibold text-text-primary"
+                          >項目</th
+                        >
+                        <th
+                          class="border border-border px-4 py-2.5 text-left bg-surface-muted font-semibold text-text-primary"
+                          >選択肢</th
+                        >
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td
+                          class="border border-border px-4 py-2.5 text-text-secondary"
+                          >No Adv</td
+                        >
+                        <td
+                          class="border border-border px-4 py-2.5 text-text-secondary"
+                          >ON / OFF</td
+                        >
+                      </tr>
+                      <tr>
+                        <td
+                          class="border border-border px-4 py-2.5 text-text-secondary"
+                          >I Serve</td
+                        >
+                        <td
+                          class="border border-border px-4 py-2.5 text-text-secondary"
+                          >Me（自分）/ Opp（相手）</td
+                        >
+                      </tr>
+                      <tr>
+                        <td
+                          class="border border-border px-4 py-2.5 text-text-secondary"
+                          >Games</td
+                        >
+                        <td
+                          class="border border-border px-4 py-2.5 text-text-secondary"
+                          >4 / 6</td
+                        >
+                      </tr>
+                      <tr>
+                        <td
+                          class="border border-border px-4 py-2.5 text-text-secondary"
+                          >Tiebreak</td
+                        >
+                        <td
+                          class="border border-border px-4 py-2.5 text-text-secondary"
+                          >ON / OFF</td
+                        >
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <ul class="space-y-1 mt-3 ml-4">
+                  <li
+                    class="text-text-secondary text-sm leading-relaxed relative pl-5 before:content-['•'] before:absolute before:left-0 before:text-accent"
+                  >
+                    各項目をタップすると、選択肢が切り替わります
+                  </li>
+                  <li
+                    class="text-text-secondary text-sm leading-relaxed relative pl-5 before:content-['•'] before:absolute before:left-0 before:text-accent"
+                  >
+                    画面を上下にスクロールすると、STARTボタンまで表示できます
+                  </li>
+                  <li
+                    class="text-text-secondary text-sm leading-relaxed relative pl-5 before:content-['•'] before:absolute before:left-0 before:text-accent"
+                  >
+                    STARTをタップすると、試合画面に移動します
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <h3
+                  class="text-lg sm:text-xl font-semibold text-text-primary mb-3"
+                >
+                  2. 試合画面（Score）
+                </h3>
+                <p class="text-text-secondary leading-relaxed mb-4">
+                  試合中のスコア表示・入力を行う画面です。
+                </p>
+                <img
+                  src="/img/garmin-score.png"
+                  alt="設定画面"
+                  class="rounded-xl border border-border shadow-sm mb-4 max-w-full h-auto"
+                />
+                <h4
+                  class="text-base sm:text-lg font-semibold text-text-primary mb-2"
+                >
+                  画面の構成
+                </h4>
+                <ul class="space-y-1 mb-4 ml-4">
+                  <li
+                    class="text-text-secondary leading-relaxed relative pl-5 before:content-['•'] before:absolute before:left-0 before:text-accent"
+                  >
+                    <strong class="font-semibold text-text-primary">上部</strong
+                    >：自分のスコア（Me / Me(S)）— (S)
+                    が付いている方がサーブ権を持っています
+                  </li>
+                  <li
+                    class="text-text-secondary leading-relaxed relative pl-5 before:content-['•'] before:absolute before:left-0 before:text-accent"
+                  >
+                    <strong class="font-semibold text-text-primary">下部</strong
+                    >：相手のスコア（Opp / Opp(S)）
+                  </li>
+                  <li
+                    class="text-text-secondary leading-relaxed relative pl-5 before:content-['•'] before:absolute before:left-0 before:text-accent"
+                  >
+                    <strong class="font-semibold text-text-primary">下段</strong
+                    >：セットごとのゲーム数を表形式で表示（S1 / S2 / S3）
+                  </li>
+                </ul>
+                <h4
+                  class="text-base sm:text-lg font-semibold text-text-primary mb-2"
+                >
+                  操作方法
+                </h4>
+                <div class="overflow-x-auto">
+                  <table class="w-full text-sm border-collapse">
+                    <thead>
+                      <tr>
+                        <th
+                          class="border border-border px-4 py-2.5 text-left bg-surface-muted font-semibold text-text-primary"
+                          >操作</th
+                        >
+                        <th
+                          class="border border-border px-4 py-2.5 text-left bg-surface-muted font-semibold text-text-primary"
+                          >動作</th
+                        >
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td
+                          class="border border-border px-4 py-2.5 text-text-secondary"
+                          >画面上半分をタップ</td
+                        >
+                        <td
+                          class="border border-border px-4 py-2.5 text-text-secondary"
+                          >自分のポイント</td
+                        >
+                      </tr>
+                      <tr>
+                        <td
+                          class="border border-border px-4 py-2.5 text-text-secondary"
+                          >画面下半分をタップ</td
+                        >
+                        <td
+                          class="border border-border px-4 py-2.5 text-text-secondary"
+                          >相手のポイント</td
+                        >
+                      </tr>
+                      <tr>
+                        <td
+                          class="border border-border px-4 py-2.5 text-text-secondary"
+                          >上スワイプ</td
+                        >
+                        <td
+                          class="border border-border px-4 py-2.5 text-text-secondary"
+                          >スコアをリセット（確認ダイアログが表示されます）</td
+                        >
+                      </tr>
+                      <tr>
+                        <td
+                          class="border border-border px-4 py-2.5 text-text-secondary"
+                          >下スワイプ</td
+                        >
+                        <td
+                          class="border border-border px-4 py-2.5 text-text-secondary"
+                          >相手のポイントを記録（タップの代替）</td
+                        >
+                      </tr>
+                      <tr>
+                        <td
+                          class="border border-border px-4 py-2.5 text-text-secondary"
+                          >右スワイプ</td
+                        >
+                        <td
+                          class="border border-border px-4 py-2.5 text-text-secondary"
+                          >統計画面を表示</td
+                        >
+                      </tr>
+                      <tr>
+                        <td
+                          class="border border-border px-4 py-2.5 text-text-secondary"
+                          >ENTER / START ボタン</td
+                        >
+                        <td
+                          class="border border-border px-4 py-2.5 text-text-secondary"
+                          >自分のポイント（ボタン搭載機種）</td
+                        >
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div>
+                <h3
+                  class="text-lg sm:text-xl font-semibold text-text-primary mb-3"
+                >
+                  3. 統計画面（Stats）
+                </h3>
+                <p class="text-text-secondary leading-relaxed mb-4">
+                  試合中や試合後に、右スワイプで表示される統計画面です。
+                </p>
+                <img
+                  src="/img/garmin-stats.png"
+                  alt="設定画面"
+                  class="rounded-xl border border-border shadow-sm mb-4 max-w-full h-auto"
+                />
+                <h4
+                  class="text-base sm:text-lg font-semibold text-text-primary mb-2"
+                >
+                  表示項目
+                </h4>
+                <div class="overflow-x-auto">
+                  <table class="w-full text-sm border-collapse">
+                    <thead>
+                      <tr>
+                        <th
+                          class="border border-border px-4 py-2.5 text-left bg-surface-muted font-semibold text-text-primary"
+                          >項目</th
+                        >
+                        <th
+                          class="border border-border px-4 py-2.5 text-left bg-surface-muted font-semibold text-text-primary"
+                          >内容</th
+                        >
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td
+                          class="border border-border px-4 py-2.5 text-text-secondary"
+                          >Break Points</td
+                        >
+                        <td
+                          class="border border-border px-4 py-2.5 text-text-secondary"
+                          >ブレークポイント獲得率（獲得数 / 機会数）</td
+                        >
+                      </tr>
+                      <tr>
+                        <td
+                          class="border border-border px-4 py-2.5 text-text-secondary"
+                          >Receiving Points</td
+                        >
+                        <td
+                          class="border border-border px-4 py-2.5 text-text-secondary"
+                          >レシーブポイント獲得率（獲得数 / 機会数）</td
+                        >
+                      </tr>
+                      <tr>
+                        <td
+                          class="border border-border px-4 py-2.5 text-text-secondary"
+                          >Total Points</td
+                        >
+                        <td
+                          class="border border-border px-4 py-2.5 text-text-secondary"
+                          >トータルポイント獲得率（獲得数 / 総ポイント数）</td
+                        >
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <ul class="space-y-1 mt-3 ml-4">
+                  <li
+                    class="text-text-secondary text-sm leading-relaxed relative pl-5 before:content-['•'] before:absolute before:left-0 before:text-accent"
+                  >
+                    左スワイプで試合画面に戻ります
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <hr class="border-border" />
+
+          <section>
+            <h2
+              class="text-xl sm:text-2xl font-bold text-text-primary mb-4 pb-2 border-b border-border"
+            >
+              更新履歴
+            </h2>
+            <div class="space-y-3">
+              <div>
+                <h3
+                  class="text-base sm:text-lg font-semibold text-text-primary mb-1"
+                >
+                  v0.1
+                </h3>
+                <ul class="space-y-1 ml-4">
+                  <li
+                    class="text-text-secondary text-sm leading-relaxed relative pl-5 before:content-['•'] before:absolute before:left-0 before:text-accent"
+                  >
+                    初回リリース
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+        </div>
+      </article>
+    </div>
+  </main>
+</Layout>
