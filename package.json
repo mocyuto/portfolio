@@ -32,7 +32,7 @@
     "vitest": "^2.0.0"
   },
   "dependencies": {
-    "astro": "^5.0.0",
+    "astro": "^6.1.10",
     "astro-icon": "^1.0.0",
     "@iconify-json/fe": "^1.0.0",
     "@iconify-json/mdi": "^1.0.0",
