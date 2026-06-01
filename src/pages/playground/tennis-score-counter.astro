@@ -273,21 +273,11 @@ import Layout from "../../layouts/Layout.astro";
                       <tr>
                         <td
                           class="border border-border px-4 py-2.5 text-text-secondary"
-                          >画面上半分をタップ</td
+                          >画面タップ</td
                         >
                         <td
                           class="border border-border px-4 py-2.5 text-text-secondary"
-                          >自分のポイント</td
-                        >
-                      </tr>
-                      <tr>
-                        <td
-                          class="border border-border px-4 py-2.5 text-text-secondary"
-                          >画面下半分をタップ</td
-                        >
-                        <td
-                          class="border border-border px-4 py-2.5 text-text-secondary"
-                          >相手のポイント</td
+                          >自分 or 相手にポイント追加</td
                         >
                       </tr>
                       <tr>
@@ -297,17 +287,7 @@ import Layout from "../../layouts/Layout.astro";
                         >
                         <td
                           class="border border-border px-4 py-2.5 text-text-secondary"
-                          >スコアをリセット（確認ダイアログが表示されます）</td
-                        >
-                      </tr>
-                      <tr>
-                        <td
-                          class="border border-border px-4 py-2.5 text-text-secondary"
-                          >下スワイプ</td
-                        >
-                        <td
-                          class="border border-border px-4 py-2.5 text-text-secondary"
-                          >相手のポイントを記録（タップの代替）</td
+                          >試合リセット確認</td
                         >
                       </tr>
                       <tr>
@@ -317,17 +297,17 @@ import Layout from "../../layouts/Layout.astro";
                         >
                         <td
                           class="border border-border px-4 py-2.5 text-text-secondary"
-                          >統計画面を表示</td
+                          >統計画面</td
                         >
                       </tr>
                       <tr>
                         <td
                           class="border border-border px-4 py-2.5 text-text-secondary"
-                          >ENTER / START ボタン</td
+                          >物理ボタン（Enter / Start）</td
                         >
                         <td
                           class="border border-border px-4 py-2.5 text-text-secondary"
-                          >自分のポイント（ボタン搭載機種）</td
+                          >直前のポイント入力を一つ戻す</td
                         >
                       </tr>
                     </tbody>
@@ -422,6 +402,25 @@ import Layout from "../../layouts/Layout.astro";
               更新履歴
             </h2>
             <div class="space-y-3">
+              <div>
+                <h3
+                  class="text-base sm:text-lg font-semibold text-text-primary mb-1"
+                >
+                  v0.2
+                </h3>
+                <ul class="space-y-1 ml-4">
+                  <li
+                    class="text-text-secondary text-sm leading-relaxed relative pl-5 before:content-['•'] before:absolute before:left-0 before:text-accent"
+                  >
+                    物理ボタン（Enter / Start）で直前のポイント入力を一つ戻す（Undo）機能を追加
+                  </li>
+                  <li
+                    class="text-text-secondary text-sm leading-relaxed relative pl-5 before:content-['•'] before:absolute before:left-0 before:text-accent"
+                  >
+                    下スワイプの操作を削除
+                  </li>
+                </ul>
+              </div>
               <div>
                 <h3
                   class="text-base sm:text-lg font-semibold text-text-primary mb-1"
